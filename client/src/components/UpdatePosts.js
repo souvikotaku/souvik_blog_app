@@ -24,7 +24,7 @@ function UpdatePosts(props){
       author: author,
     }
 
-    axios.put("http://localhost:5001/blogs/" + id,update_data).then((res) => {
+    axios.put("https://souvik-blog-app.herokuapp.com/blogs/" + id,update_data).then((res) => {
       alert("Your post has been updated successfully")
   
        window.location.reload();

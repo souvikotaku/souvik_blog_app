@@ -31,7 +31,7 @@ export default function(){
     function closePanel(id) {
        
         if(window.confirm("are you sure you want to delete the post?")){
-            axios.delete("http://localhost:5001/blogs/" + id).then((res) => {
+            axios.delete("https://souvik-blog-app.herokuapp.com/blogs/" + id).then((res) => {
               // console.log(res.data);
               window.location.reload();
       
@@ -46,7 +46,7 @@ export default function(){
      useEffect(() =>{
 
        function getPosts(){
-        axios.get('http://localhost:5001/blogs').then(res => {
+        axios.get('https://souvik-blog-app.herokuapp.com/blogs').then(res => {
             console.log(res.data)
             setUserdata(res.data)
          })

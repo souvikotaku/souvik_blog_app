@@ -17,7 +17,7 @@ export default function SearchPage(){
    function closePanel4(id) {
     
         if(window.confirm("are you sure you want to delete the post?")){
-            axios.delete("http://localhost:5001/blogs/" + id).then((res) => {
+            axios.delete("https://souvik-blog-app.herokuapp.com/blogs/" + id).then((res) => {
               // console.log(res.data);
               window.location.reload();
       
@@ -35,7 +35,7 @@ export default function SearchPage(){
    function clicksearch(){
     
 
-      axios.get(`http://localhost:5001/blogs/search/${postsearch}`).then(res => {
+      axios.get(`https://souvik-blog-app.herokuapp.com/blogs/search/${postsearch}`).then(res => {
         console.log(res.data)
         setPostdata(res.data)
      })

@@ -50,11 +50,11 @@ function UpdatePosts(props){
     return(
       <div style={{display:'flex',justifyContent: 'center'}}>
 <div class="updatebox" >
-<span class="close" onClick={closePanel2}>&times;</span><br/><br/>
+<span class="close" onClick={closePanel2}>&times;</span>
 
  <form onSubmit={handleSubmit(onSubmit)} >
 
-   <div style={{textAlign:'center',paddingTop:'2%'}}>
+   <div style={{textAlign:'center',paddingTop:'2%'}} className="form-group">
    <h1 >Edit Posts</h1><br/>
 
    </div>
@@ -63,6 +63,7 @@ function UpdatePosts(props){
             defaultValue={props.title || title} 
             placeholder="Enter Title"
             required
+            className="form-control"
             onChange={(event)=>{
               setTitle(event.target.value)
               setDesc(props.desc || desc)
@@ -81,6 +82,8 @@ function UpdatePosts(props){
         defaultValue={props.desc || desc}  
         placeholder="Enter Description"
         required
+        className="form-control"
+
         onChange={(event)=>{
           setDesc(event.target.value)
           setTitle(props.title || title)
@@ -98,6 +101,8 @@ function UpdatePosts(props){
             defaultValue={props.author || author}   
             placeholder="Enter Author"
             required
+            className="form-control"
+
             onChange={(event)=>{
               setAuthor(event.target.value)
               setDesc(props.desc || desc)
@@ -108,7 +113,7 @@ function UpdatePosts(props){
          />
 </div>
 
-
+<br/>
         <div  style={{textAlign:'center'}}>
             <button className="btn btn-success btn-md" type="submit" disabled={!change? 'none' : ''} >Update Post</button>
         </div>

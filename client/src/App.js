@@ -56,12 +56,15 @@ function App() {
   return (
     <>
     <Router>
-
-    <h1>Write Post</h1><br/>
+<div style={{textAlign:'center'}}>
+<h1>Write Post</h1>
+</div>
+    <br/>
     <form onSubmit={handleSubmit(onSubmit)}>
-
+<div className="form-group">
     <input 
     required
+    className="form-control"
     type="text" 
     placeholder="Enter Title"
     defaultValue={title}
@@ -72,6 +75,7 @@ function App() {
 
     <textarea 
     required
+    className="form-control"
     type="text" 
     placeholder="Enter Description"
     defaultValue={desc}
@@ -82,6 +86,7 @@ function App() {
 
     <input 
     required
+    className="form-control"
     type="text" 
     placeholder="Enter Author Name"
     defaultValue={author}
@@ -93,21 +98,22 @@ function App() {
     <button
             type="submit"
             variant="contained"
-            className=" btn btn-primary"
+            className=" btn btn-primary btn-block"
     >
             Submit Post
     </button>
+    </div>
     </form>
 
-    <br/>
+    
     <button
             
-            className=" btn btn-success"
+            className=" btn btn-success btn-block"
             onClick={clickSearch}
     >
       Search Posts
     </button>
-    
+    <br/><br/>
 
 
     <div style={{backgroundColor:'red',padding:'15px'}} className="row">

@@ -58,9 +58,9 @@ export default function SearchPage(){
     />
 
 
-
-    <span><button className='btn btn-primary' onClick={clicksearch}>search</button></span><br/>
-<div style={{overflow:'scroll',height: '70%'}}>
+<br/>
+    <button className='btn btn-info btn-block ' onClick={clicksearch}>search</button><br/>
+<div style={{overflow:'scroll',height: '60%'}}>
 
     {
         postdata.map(post=>{

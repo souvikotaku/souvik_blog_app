@@ -42,6 +42,12 @@ function UpdatePosts(props){
     modal.style.display = "none";
 
     localStorage.removeItem('id')
+if(change){
+  window.location.reload()
+
+}else{
+  setChange(false)
+}
   }
     
 

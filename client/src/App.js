@@ -41,7 +41,7 @@ function App() {
 
     console.log(form_data)
 
-    axios.post('http://localhost:5001/blogs/add',form_data).then(res => {
+    axios.post('https://souvik-blog-app.herokuapp.com/blogs/add',form_data).then(res => {
       
         alert('post has been submitted successfully')
         window.location.reload();
@@ -57,7 +57,7 @@ function App() {
     <>
     <Router>
 <div style={{textAlign:'center'}}>
-<h1>Write Post</h1>
+<h1>Souvik's Blog App</h1>
 </div>
     <br/>
     <form onSubmit={handleSubmit(onSubmit)}>

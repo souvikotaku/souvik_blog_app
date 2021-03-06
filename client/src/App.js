@@ -116,7 +116,7 @@ function App() {
     <br/><br/>
 
 
-    <div style={{backgroundColor:'red',padding:'15px'}} className="row">
+    <div style={{padding:'15px'}} className="row postbox">
       <Posts/>
     </div>
 

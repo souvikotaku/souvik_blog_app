@@ -1,10 +1,14 @@
 import './App.css';
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import Posts from './components/Posts'
+import SearchPage from './components/SearchPage'
+import './components/posts.css'
+
+
 
 
 
@@ -14,8 +18,20 @@ function App() {
   const [title,setTitle] = useState("");
   const [desc,setDesc] = useState("");
   const [author,setAuthor] = useState("");
+ 
+  function clickSearch(id,title,desc,author){
+    let updatebox = document.querySelector(".tablediv2");
+  
+    updatebox.style.display = "block";
+
+    
+
+  }
 
   const onSubmit=()=>{
+
+    localStorage.removeItem('id')
+
      
     let form_data = {
       title: title,
@@ -32,6 +48,9 @@ function App() {
       
     })
   }
+
+
+  
 
 
   return (
@@ -80,13 +99,30 @@ function App() {
     </button>
     </form>
 
+    <br/>
+    <button
+            
+            className=" btn btn-success"
+            onClick={clickSearch}
+    >
+      Search Posts
+    </button>
+    
+
+
     <div style={{backgroundColor:'red',padding:'15px'}} className="row">
       <Posts/>
     </div>
+
+    <div id="myModal2" class="modal tablediv2" style={{display: 'none'}} >
+        <SearchPage
+          
+        />
+    </div>
     
     <Switch>
-      {/* <Route path='/' exact component={Home}/>
-      <Route path='/update' component={Updatemodal}/> */}
+      {/* <Route path='/' exact component={App}/> */}
+      {/* <Route path='/search' component={SearchPage}/> */}
     </Switch>
     </Router>
     </>
